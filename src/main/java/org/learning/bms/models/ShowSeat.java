@@ -7,6 +7,8 @@ import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Optional;
+
 @Getter
 @Setter
 @Entity
@@ -19,7 +21,10 @@ public class ShowSeat extends BaseModel{
     @ManyToOne
     private Seat seat;
 
+    @ManyToOne
+    private Ticket ticket;
+
     @Enumerated(EnumType.ORDINAL)
-    private ShowSeatStatus showSeatStatus;
+    private ShowSeatStatus status;
 
 }

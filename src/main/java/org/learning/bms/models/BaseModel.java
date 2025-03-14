@@ -33,5 +33,5 @@ public class BaseModel {
 
     @LastModifiedDate
     @Column(nullable = false)
-    private Date updateAt;
+    private Date updatedAt;
 }

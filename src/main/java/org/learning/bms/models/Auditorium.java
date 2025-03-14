@@ -10,6 +10,7 @@ import java.util.List;
 public class Auditorium extends BaseModel{
 
     private String name;
+    private int capacity;
 
     @ManyToOne
     private Theatre theatre;
