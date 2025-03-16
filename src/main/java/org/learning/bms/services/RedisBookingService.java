@@ -76,7 +76,7 @@ public class RedisBookingService implements IBookingService{
         //we are locked the seats by keeping it redis
         for (ShowSeat showSeat : showSeats) {
 
-            String seatKey = "seatId=" + showSeat.getId();
+            String seatKey = "seatId=" + showSeat.getId() + "userId=" + userId;
             cacheService.set(seatKey,ShowSeatStatus.LOCKED);
         }
 
@@ -95,7 +95,7 @@ public class RedisBookingService implements IBookingService{
 
         for (Long showSeatId : showSeatIds) {
 
-            String seatKey = "seatId=" + showSeatId;
+            String seatKey = "seatId=" + showSeatId +  "userId=" + userId;;
             String seatStatus = (String) cacheService.get(seatKey);
 
             if(seatStatus == null) {
